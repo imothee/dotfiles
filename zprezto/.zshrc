@@ -31,5 +31,24 @@ export VISUAL="vim"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Path add
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+# Add OpenJDK
+pathadd "/usr/local/opt/openjdk/bin"
+
+# Add Flutter
+pathadd "$HOME/workspace/libs/flutter/bin"
+
+# Add stack bins
+pathadd "$HOME/.local/bin"
+
+# Add Cargo
+pathadd "$HOME/.cargo/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+pathadd "$HOME/.rvm/bin"
