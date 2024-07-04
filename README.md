@@ -2,7 +2,7 @@
 
 These dotfiles use [Stow](https://www.gnu.org/software/stow/manual/stow.html) to manage the symlinks in your home directory.
 
-It is expected that you will be using zsh, tmux and zprezto to manage your zshell.
+These dotfiles assume you are using fish, starship and tmux
 
 ### Initial Setup
 
@@ -27,5 +27,7 @@ git submodule foreach git merge origin master
 By default to the parent of the current folder so within ~/.dotfiles run
 
 ```
-stow tmux zprezto
+stow tmux
+stow -t ~/.config starship
+stow -t ~/.config/fish fish
 ```
