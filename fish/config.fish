@@ -7,8 +7,10 @@ set -U fish_greeting ""
 
 # Init starship
 starship init fish | source
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/tim/.lmstudio/bin
-# End of LM Studio CLI section
 
 mise activate fish | source
+
+# Machine-specific config (gitignored, per-host) — see ~/.config/fish/local.fish
+if test -f ~/.config/fish/local.fish
+    source ~/.config/fish/local.fish
+end

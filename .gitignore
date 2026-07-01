@@ -1,6 +1,8 @@
-# Per-host PRIVATE tmux overlay — machine/company-specific, never publish.
-tmux/local.conf
+# Per-host PRIVATE overlays — machine/company-specific, never publish.
 local.conf
+local.fish
+tmux/local.conf
+fish/local.fish
 
 # tpm-managed plugins are provisioned per box, not vendored here.
 tmux/plugins/
